@@ -1,11 +1,12 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="dashboard.css">
-
+        <script id="applicationScript" type="text/javascript" src="dashboard.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <style>
         table, th, td {
             border-collapse: collapse;
-            }
+        }
         th, td {
             padding: 15px;
             text-align: left;
@@ -18,10 +19,16 @@
     </head>
 
     <body>
-        <img src="OweDough.JPG" height="150">
+        <a href="dashboard.html">
+          <img src="OweDough.JPG" height="150">
+        </a>  
         Dashboard &nbsp;
-        <button>Add Debtor</button> &nbsp;
-        <button>Add Creditor</button>
+        <a href="new.html">
+          <button> Add Debtor </button>
+        </a> &nbsp;
+        <a href="new.html">
+          <button>Add Creditor</button>
+        </a>  
         <br><br>
         <table id="info">
                 <tr>
