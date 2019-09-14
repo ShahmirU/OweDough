@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/ShahmirU/OweDough.git"
   },
-  "author": "",
+  "author": "nancy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ShahmirU/OweDough/issues"
@@ -19,6 +19,14 @@
   "homepage": "https://github.com/ShahmirU/OweDough#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^6.6.1",
     "firebase-admin": "^8.5.0"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "npm",
+    "install",
+    "--save",
+    "firebase"
+  ]
 }
