@@ -1,13 +1,13 @@
 var express = require('express');
 var app = express();
 
-//var firebase = require("firebase-admin");
-//var serviceAccount = require("./serviceAccountKey.json");
+var firebase = require("firebase-admin");
+var serviceAccount = require("./serviceAccountKey.json");
 
-//firebase.initializeApp({
-//        credential: firebase.credential.cert(serviceAccount),
-//        databaseURL: https://owedough-531a7.firebaseio.com/
-//});
+firebase.initializeApp({
+        credential: firebase.credential.cert(serviceAccount),
+        databaseURL: "https://owedough-531a7.firebaseio.com/"
+});
 
 
 // Set the configuration for your app
