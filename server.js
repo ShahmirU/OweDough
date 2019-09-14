@@ -12,17 +12,17 @@ var app = express();
 
 // Set the configuration for your app
   // TODO: Replace with your project's config object
-  var config = {
-    apiKey: "AIzaSyDhlB_9CPCoQJprIgdxdqpFoPdC44ZEN3I",
-    authDomain: "owedough-531a7.firebaseapp.com",
-    databaseURL: "https://owedough-531a7.firebaseio.com",
-    storageBucket: "owedough-531a7.appspot.com"
-  };
+//  var config = {
+  //  apiKey: "AIzaSyDhlB_9CPCoQJprIgdxdqpFoPdC44ZEN3I",
+    //authDomain: "owedough-531a7.firebaseapp.com",
+    //databaseURL: "https://owedough-531a7.firebaseio.com",
+    //storageBucket: "owedough-531a7.appspot.com"
+  //};
 
-  firebase.initializeApp(config);
+  //firebase.initializeApp(config);
 
   // Get a reference to the database service
-  var database = firebase.database();
+  //var database = firebase.database();
 
 // routes
 
