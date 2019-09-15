@@ -3,6 +3,7 @@ var app = express();
 
 var firebase = require("firebase/app");
 require("firebase/firestore");
+require("firebase/database");
 
 var firebaseConfig = {
   apiKey: "AIzaSyDhlB_9CPCoQJprIgdxdqpFoPdC44ZEN3I",
@@ -19,14 +20,12 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 // routes
-
 app.use(express.static(__dirname + '/public'));
 
-
-app.get('/dashboard', function(request, response){
-    console.log('GET request received at /dashboard');
+app.get('/dashboard', function (request, response) {
+  console.log('GET request received at /dashboard');
 });
 
-app.listen(3000, function(){
-    console.log("Server is running on port 3000");
+app.listen(3000, function () {
+  console.log("Server is running on port 3000");
 });
