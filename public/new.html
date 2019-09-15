@@ -1,6 +1,5 @@
 <html>
     <head>
-        <script id="applicationScript" type="text/javascript" src="new.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </head>
 
@@ -23,5 +22,30 @@
         <a href="dashboard.html">
             <button id="submit_btn">Submit</button>
         </a>
+
+    <script>
+    console.log($('#first_name').val());
+
+    $('#submit_btn').on("click", function(){
+        submit_new($("#first_name").val(), $("#last_name").val(), $("#amount").val(), $("#date").val(), $("#desc")).val();
+    });
+
+
+    function submit_new(first_name, last_name, amount, date, desc){
+        $(document).ready(function () {
+            $.get('/submit'+'?first_name='+first_name+'&last_name='+last_name+'&amount='+amount+'&date='+date+'&desc='+desc, function(data){
+                if(!data){
+                    console.log("Unable to submit");
+                    alert("Error: Unable to submit");
+                }
+                else{
+                    console.log(data);
+                    //TODO
+                }
+            })
+        });  
+    }
+    </script>    
+
     </body>
 </html>
