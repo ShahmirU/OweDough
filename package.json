@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ShahmirU/OweDough#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "firebase-admin": "^8.5.0"
+    "firebase-admin": "^8.5.0",
+    "request-promise": "^4.2.4"
   }
 }

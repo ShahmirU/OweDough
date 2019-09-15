@@ -5,20 +5,24 @@ var firebase = require("firebase-admin");
 var serviceAccount = require("./serviceAccountKey.json");
 
 firebase.initializeApp({
-        credential: firebase.credential.cert(serviceAccount),
-        databaseURL: "https://owedough-531a7.firebaseio.com/"
+  credential: firebase.credential.cert(serviceAccount),
+  databaseURL: "https://owedough-531a7.firebaseio.com/"
 });
 
-  // Get a reference to the database service
-  var database = firebase.database();
+// Get a reference to the database service
+var database = firebase.database();
 
 app.use(express.static(__dirname + '/public'));
 
 
-app.get('/dashboard', function(request, response){
-    console.log('GET request received at /dashboard');
-})
+app.get('/dashboard', function (request, response) {
+  console.log('GET request received at /dashboard');
+});
 
-app.listen(3000, function(){
-    console.log("Server is running on port 3000");
+app.get('/breakdown', function (request, response) {
+  console.log('GET request received at /breakdown');
+});
+
+app.listen(3000, function () {
+  console.log("Server is running on port 3000");
 });
