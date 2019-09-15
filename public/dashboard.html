@@ -15,6 +15,9 @@
             width: 100%;
             background-color: #f1f1c1;
         }
+        body{
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         </style>
     </head>
 
@@ -24,19 +27,21 @@
         <a href="dashboard.html">
           <img src="OweDough.JPG" height="150">
         </a>
-        Dashboard &nbsp;
+        <b>Dashboard</b> &nbsp;
         <a href="new.html">
           <button> Add Debtor </button>
         </a> &nbsp;
-        <a href="new.html">
+        <a href="new_creditor.html">
           <button>Add Creditor</button>
         </a>
         <br><br>
+        <div id="table-container">
         <table id="info">
                 <tr>
                   <th>Name</th>
                   <th>Net Amount</th>
-                  <th>&nbsp;</th>
+                  <th>Description</th>
+                  <th>Date</th>
                   <th>Delete</th>
                 </tr>
                 <tr>
@@ -53,6 +58,7 @@
                   </td>
                 </tr>
         </table>
+      </div>
       </center>
 
 
@@ -84,15 +90,18 @@
       paymentsListener = firebase.database().ref("payments").on('value', function(snapshot){
           table.innerHTML = "";
           var row0 = table.insertRow(0);
+          row0.style.background = "darkgreen";
+          row0.style.color = "white";
 
-          var cell01 = row0.insertCell(0);
+              var cell01 = row0.insertCell(0);
               var cell02 = row0.insertCell(1);
               var cell03 = row0.insertCell(2);
               var cell04 = row0.insertCell(3);
+              var cell05 = row0.insertCell(4);
               
               cell01.innerHTML = 'Name';
               cell02.innerHTML = "Amount";
-              cell03.innerHTML = '';
+              cell03.innerHTML = 'Date';
               cell04.innerHTML = "Delete";
 
           console.log(snapshot.val());
@@ -100,10 +109,7 @@
           snapshot.forEach(function(data){
               console.log(data.key + " | " + data.val()['amount']);
               
-              
               var row = table.insertRow(1);
-
-              
 
               var cell1 = row.insertCell(0);
               var cell2 = row.insertCell(1);
@@ -118,8 +124,7 @@
               else{
                 row.style.color = "green";
               }
-              cell3.innerHTML = 'View Breakdown';
-              cell3.style.color = "black";
+              cell3.innerHTML = data.val()['date'];
               cell4.innerHTML = "<button class=\"delete_img\" onclick=\"deleteTR(this)\"> <img src=\"remove.svg\" height=\"20px\"> </button>";         
           })
     });

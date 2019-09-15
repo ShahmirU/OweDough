@@ -1,28 +1,39 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #desc-hide{
+                display: none;
+            }
+        
+        </style>
     </head>
 
     <body>
+        <center>
         <a href="dashboard.html">
             <img src="OweDough.JPG" height="150">
         </a>    
         <br>
 
-        Create New
-        
+        <b>Create New Debtor</b>
+        <br><br>
         First Name <input id="first_name">
         Last Name <input id="last_name">
         <br><br>
-        Amount Owed <input id="amount" type="number">
+        Amount Owed <input id="amount" type="number" min='0' oninput="this.value = Math.abs(this.value)">
         Date <input id="date">
-        Description <input id="desc">
+        <div id="desc-hide" Description <input id="desc"></div>
 
         <br><br>
         <a href="dashboard.html">
             <button id="submit_btn">Submit</button>
         </a>
-
+    </center>
     <script>
     console.log($('#first_name').val());
 

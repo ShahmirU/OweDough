@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #desc-hide{
+                display: none;
+            }
+        
+        </style>
+    </head>
+
+    <body>
+        <center>
+        <a href="dashboard.html">
+            <img src="OweDough.JPG" height="150">
+        </a>    
+        <br>
+
+        <b>Create New Creditor</b>
+        <br><br>
+        First Name <input id="first_name">
+        Last Name <input id="last_name">
+        <br><br>
+        Amount Owed <input id="amount" type="number" max='0' oninput="this.value = -Math.abs(this.value)">
+        Date <input id="date">
+        <div id="desc-hide" Description <input id="desc"></div>
+
+        <br><br>
+        <a href="dashboard.html">
+            <button id="submit_btn">Submit</button>
+        </a>
+    </center>
+    <script>
+    console.log($('#first_name').val());
+
+    $('#submit_btn').on("click", function(){
+        submit_new($("#first_name").val(), $("#last_name").val(), $("#amount").val(), $("#date").val(), $("#desc")).val();
+    });
+
+
+    function submit_new(first_name, last_name, amount, date, desc){
+        $(document).ready(function () {
+            $.get('/submit'+'?first_name='+first_name+'&last_name='+last_name+'&amount='+amount+'&date='+date+'&desc='+desc, function(data){
+                if(!data){
+                    console.log("Unable to submit");
+                    alert("Error: Unable to submit");
+                }
+                else{
+                    console.log(data);
+                    //TODO
+                }
+            })
+        });  
+    }
+    </script>    
+
+    </body>
+</html>
