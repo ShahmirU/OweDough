@@ -23,14 +23,25 @@ app.get('/breakdown', function (request, response) {
   console.log('GET request received at /breakdown');
 });
 
-app.get('/submit', function (req, response) {
-  var first_name = req.query.first_name;
-  var last_name = req.query.last_name;
-  var amount = Math.abs(Number(req.query.amount));
-  var date = req.query.date;
-  var desc = req.query.desc;
-  console.log(first_name);
-  console.log(last_name);
+app.get('/submit', function(req, response){
+    var first_name = req.query.first_name;
+    var last_name = req.query.last_name;
+    var amount = Math.abs(Number(req.query.amount));
+    var date = req.query.date;
+    var desc = req.query.desc;
+    console.log(first_name);
+    console.log(last_name);
+
+    var payments = firebase.database().ref("payments");
+
+    payments.push( {
+      "first_name": first_name,
+      "last_name": last_name,
+      "amount": amount,
+      "date": date,
+      "desc": desc,
+    });
+    
 });
 
 app.listen(3000, function () {
