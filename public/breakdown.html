@@ -1,8 +1,47 @@
 <html>
-<head>
-</head>
+    <head>
+        <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="dashboard.css">
+        <script id="applicationScript" type="text/javascript" src="dashboard.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <style>
+        table, th, td {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        table#t01 {
+            width: 100%;    
+            background-color: #f1f1c1;
+        }
+        </style>
+    </head>
 
-<body>
-<h1> OweDough </h1>
-</body>
+    <body>
+        <img src="OweDough.JPG" height="150">
+        Tom Cat &nbsp;
+        <button onclick="window.location.href = 'new.html'" value="w3docs">Add Debtor</button> &nbsp;
+        <button>Add Creditor</button>
+        <br><br>
+        <table id="info">
+                <tr>
+                  <th>Description</th>
+                  <th>Amount</th> 
+                  <th>Date</th>
+                </tr>
+                <tr>
+                  <td>Taxi Ride</td>
+                  <td>50</td>
+                  <td>13th September 2019</td>
+                </tr>
+                <tr>
+                  <td>Movie Tickets</td>
+                  <td>30</td>
+                  <td>25th August 2019</td>		
+                  </td>
+                </tr>
+        </table>
+
+    </body>
 </html>
