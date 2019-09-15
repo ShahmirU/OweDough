@@ -25,4 +25,16 @@ app.get('/breakdown', function (request, response) {
 
 app.listen(3000, function () {
   console.log("Server is running on port 3000");
+app.get('/submit', function(req, response){
+    var first_name = req.query.first_name;
+    var last_name = req.query.last_name;
+    var amount = Math.abs(Number(req.query.amount));
+    var date = req.query.date;
+    var desc = req.query.desc;
+    console.log(first_name);
+    console.log(last_name);
+});
+
+app.listen(3000, function(){
+    console.log("Server is running on port 3000");
 });

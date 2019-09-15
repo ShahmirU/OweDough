@@ -16,6 +16,6 @@ function submit_new(first_name, last_name, amount, date, desc){
                 console.log(data);
                 //TODO
             }
-        })
+        });
     });  
 }
